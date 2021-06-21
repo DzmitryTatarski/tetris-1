@@ -104,11 +104,27 @@ public class BlocksShapesTest {
                 {iBlock.dotAt(3, 0), 1, "incorrect dotAt(3, 0)"},
         };
 
+        LBlock lBlock = new LBlock();
+        int actualRowsForLBlock = lBlock.rows();
+        int expectedRowsForLBlock = 3;
+        int actualColsForLBlock = lBlock.cols();
+        int expectedColsForLBlock = 2;
+        var LBlockDotRepresentation = new Object[][]{
+                {lBlock.dotAt(0, 0), 1, "incorrect dotAt(0, 0)"},
+                {lBlock.dotAt(0, 1), 0, "incorrect dotAt(0, 1)"},
+                {lBlock.dotAt(1, 0), 1, "incorrect dotAt(0, 2)"},
+                {lBlock.dotAt(1, 1), 0, "incorrect dotAt(1, 0)"},
+                {lBlock.dotAt(2, 0), 1, "incorrect dotAt(1, 1)"},
+                {lBlock.dotAt(2, 1), 1, "incorrect dotAt(1, 2)"}
+
+        };
+
         return new Object[][]{
                 {"Tests for OBlock ", actualRowsForOBlock, expectedRowsForOBlock, actualColsForOBlock, expectedColsForOBlock, oBlockDotRepresentation},
                 {"Tests for TBlock ", actualRowsForTBlock, expectedRowsForTBlock, actualColsForTBlock, expectedColsForTBlock, TBlockDotRepresentation},
                 {"Tests for YBlock ", actualRowsForYBlock, expectedRowsForYBlock, actualColsForYBlock, expectedColsForYBlock, YBlockDotRepresentation},
-                {"Tests for IBlock ", actualRowsForIBlock, expectedRowsForIBlock, actualColsForIBlock, expectedColsForIBlock, IBlockDotRepresentation}
+                {"Tests for IBlock ", actualRowsForIBlock, expectedRowsForIBlock, actualColsForIBlock, expectedColsForIBlock, IBlockDotRepresentation},
+                {"Tests for LBlock ", actualRowsForLBlock, expectedRowsForLBlock, actualColsForLBlock, expectedColsForLBlock, LBlockDotRepresentation}
         };
     }
 }
