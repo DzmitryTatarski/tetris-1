@@ -10,12 +10,11 @@ public class BlockFeed {
     private final List<Supplier<Block>> blocks = List.of(
             HBlock::new,
             IBlock::new,
+            LBlock::new,
             OBlock::new,
-            TBlock::new,
-            YBlock::new,
-            IBlock::new,
             SBlock::new,
-            LBlock::new
+            TBlock::new,
+            YBlock::new
     );
 
     public BlockFeed() {
